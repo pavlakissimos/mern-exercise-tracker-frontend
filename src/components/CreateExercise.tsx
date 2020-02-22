@@ -35,9 +35,15 @@ const CreateExercise = () => {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    const user = users.find(user => user.username === username)!;
 
     try {
-      axios.post("http://localhost:8000/exercises/add", { username, description, duration, date });
+      axios.post("http://localhost:8000/exercises/add", {
+        user: user._id,
+        description,
+        duration,
+        date
+      });
       history.push("/");
     } catch (err) {
       console.log(err);

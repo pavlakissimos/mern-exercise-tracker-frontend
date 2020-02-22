@@ -13,7 +13,7 @@ const App = () => {
       <Router>
         <Navbar />
         <br />
-        <div className="container mx-auto px-4 sm:px-0">
+        <div className="container mx-auto px-4 pb-6 sm:px-0">
           <Route exact path="/" component={ExercisesList} />
           <Route exact path="/edit/:id" component={EditExercise} />
           <Route exact path="/create" component={CreateExercise} />
